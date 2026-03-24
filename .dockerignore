@@ -1,0 +1,16 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.git
+.gitignore
+*.md
+.env
+*.ipynb
+*.html
+EDA.zip
+TrainingAlgorithm*.ipynb
+NSL_KDD_EDA_Module.*
