@@ -1,0 +1,9 @@
+duration,protocol_type,service,flag,src_bytes,dst_bytes,land,wrong_fragment,urgent,hot,num_failed_logins,logged_in,num_compromised,root_shell,su_attempted,num_file_creations,num_shells,num_access_files,num_outbound_cmds,is_host_login,is_guest_login,count,srv_count,serror_rate,rerror_rate,same_srv_rate,diff_srv_rate,label
+0,1,20,9,2209,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,3
+79,1,60,9,281,1301,0,0,0,2,0,1,1,1,0,4,2,0,0,0,0,1,1,0,0,1,0,3
+84,1,60,9,277,1089,0,0,0,2,0,1,1,1,0,4,2,0,0,0,0,1,1,0,0,1,0,3
+92,1,60,9,2458,9336,0,0,0,6,0,1,8,1,0,0,0,0,0,0,0,1,1,0,0,1,0,3
+73,1,60,9,3222,4004,0,0,2,1,0,1,1,1,0,0,0,0,0,0,0,1,1,0,0,1,0,3
+290,1,60,9,415,70529,0,0,0,3,0,1,4,0,0,4,0,0,0,0,0,1,1,0,0,1,0,3
+0,1,20,9,0,3249,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,3
+113,1,60,9,6274,16771,0,0,0,5,0,1,2,1,0,0,0,0,0,0,0,1,1,0,0,1,0,3
