@@ -2,9 +2,11 @@ import sqlite3
 import os
 
 def get_db_path():
-    """Get cross-platform database path"""
-    cwd = os.getcwd()
-    return os.path.join(cwd, 'database', 'db.db')
+    """Get cross-platform database path - always relative to this file"""
+    base = os.path.dirname(os.path.abspath(__file__))
+    db_dir = os.path.join(base, 'database')
+    os.makedirs(db_dir, exist_ok=True)
+    return os.path.join(db_dir, 'db.db')
 
 def createDabase():
     global conn, cursor
