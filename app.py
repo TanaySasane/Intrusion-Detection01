@@ -166,6 +166,25 @@ def upload_file():
             return render_template('upload.html', error=str(e))
     return render_template('upload.html', error=None)
 
+import subprocess, hmac, hashlib
+from flask import request as flask_request
+
+WEBHOOK_SECRET = 'intrusion-webhook-2026'
+PA_TOKEN = '764716e584e92cbe6dce35e2b9521e473f36c715'
+PA_USER = 'Tanay1202'
+PA_DOMAIN = 'Tanay1202.pythonanywhere.com'
+PROJECT_PATH = os.path.dirname(os.path.abspath(__file__))
+
+@app.route('/github-webhook', methods=['POST'])
+def github_webhook():
+    sig = flask_request.headers.get('X-Hub-Signature-256', '')
+    body = flask_request.get_data()
+    expected = 'sha256=' + hmac.new(WEBHOOK_SECRET.encode(), body, hashlib.sha256).hexdigest()
+    if not hmac.compare_digest(sig, expected):
+        return 'Invalid signature', 403
+    subprocess.Popen(['git', '-C', PROJECT_PATH, 'pull', 'origin', 'main'])
+    return 'OK', 200
+
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
